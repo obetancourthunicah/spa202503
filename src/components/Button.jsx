@@ -1,11 +1,12 @@
 export const Button = (
     {
         className = '',
-        children
+        children,
+        ...props
     }
 )=>{
     return (
-        <button className={['btn',className].join(' ')}>
+        <button {...props} className={['btn',className].join(' ')}>
             {children}
         </button>
     )
