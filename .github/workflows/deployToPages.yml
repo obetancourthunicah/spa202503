@@ -1,5 +1,4 @@
 name: Desplegar React SPA a Github Pages
-
 on:
   push:
     branches: ["main"]
