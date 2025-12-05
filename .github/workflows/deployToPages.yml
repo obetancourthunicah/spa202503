@@ -30,6 +30,8 @@ jobs:
         run: npm install
       - name: Compilar el Proyecto
         run: npm run build
+      - name: Configurar 404 Pages
+        run: cp ./dist/index.html ./dist/404.html
       - name: Configurar Github pages
         uses: actions/configure-pages@v5
       - name: Subir artefactos a Github Pages
