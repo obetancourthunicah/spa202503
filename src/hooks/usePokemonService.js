@@ -10,6 +10,16 @@ export const usePokemonService = ()=>{
             throw error;
         }
     }
+    const getPokemonById = async(id) => {
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error al Fetch de Pokemon por Id", error);
+            throw error;
+        }
+    }
 
     const getPokemonId = (url)=>{
         // https://pokeapi.co/api/v2/pokemon/1/
@@ -24,6 +34,7 @@ export const usePokemonService = ()=>{
 
     return {
         getPokemonList,
+        getPokemonById,
         getPokemonId,
         getPokemonImgUrl
     };
